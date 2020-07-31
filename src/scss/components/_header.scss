@@ -1,0 +1,121 @@
+.header {
+  border-radius: 0.8rem 0.8rem 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--color-white);
+
+  font-size: 2rem;
+
+  padding: 2.5rem;
+
+  max-width: inherit;
+  height: 8rem;
+
+  box-shadow: 0 0.5rem 0.5rem rgba($color: #000000, $alpha: 0.1);
+
+  &__menu {
+    &-wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 75%;
+
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &-checkbox:not(:checked) + &:hover {
+      height: 90%;
+    }
+
+    &-icon,
+    &::after,
+    &::before {
+      display: inline-block;
+      height: 4px;
+      width: 3rem;
+      background-color: var(--color-grey);
+      margin: 0;
+      padding: 0;
+      border-radius: 5px;
+      transform-origin: center;
+      transition: all 0.3s;
+    }
+    &::after,
+    &::before {
+      content: "";
+    }
+
+    &-checkbox {
+      display: none;
+    }
+
+    &-checkbox:checked + &::after {
+      filter: var(--filter-green);
+      transform: translateY(-215%) rotate(135deg);
+    }
+    &-checkbox:checked + &::before {
+      filter: var(--filter-green);
+      transform: translateY(235%) rotate(-135deg);
+    }
+    &-checkbox:checked + & &-icon {
+      background-color: transparent;
+    }
+  }
+
+  &__text {
+  }
+
+  &__users {
+    display: flex;
+
+    &-wrap {
+      position: relative;
+    }
+
+    &-icon {
+      opacity: 60%;
+      transition: transform 0.3s, opacity 0.3s 0.05s;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+    &-checkbox {
+      display: none;
+    }
+    &-checkbox:checked + & &-icon {
+      opacity: 90%;
+      transform: rotate(10deg);
+      filter: var(--filter-green);
+    }
+  }
+
+  &__user-count {
+    position: absolute;
+    top: -1.5rem;
+    right: -0.3rem;
+    background-image: linear-gradient(
+      to right bottom,
+      var(--color-primary-green),
+      var(--color-primary-blue)
+    );
+    border-radius: 50%;
+    width: 2rem;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--color-white);
+    font-weight: bold;
+    text-shadow: 0 0.1rem 0.15rem var(--color-grey);
+  }
+}

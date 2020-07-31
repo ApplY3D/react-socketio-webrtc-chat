@@ -1,0 +1,38 @@
+.chat {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__canvas {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    padding: 1rem 2rem;
+    flex-direction: column;
+  }
+  &__tools {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.8rem;
+    height: 8rem;
+    background-color: var(--color-white);
+    box-shadow: 0 -0.5rem 0.5rem rgba($color: #000000, $alpha: 0.1);
+    border-radius: 0 0 0.8rem 0.8rem;
+    margin-top: 0.1rem;
+  }
+
+  &__text {
+    font-family: inherit;
+    resize: none;
+    border: none;
+    background-color: var(--color-grey-light);
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 0rem rgba($color: #000000, $alpha: 0.1);
+    padding: 0.3rem 0.6rem;
+    height: 4.3rem;
+    width: 75%;
+  }
+}

@@ -1,0 +1,52 @@
+.users {
+  background-color: var(--color-white);
+  box-shadow: -0.2rem 0rem 0.4rem rgba($color: #000000, $alpha: 0.1);
+  transition: all 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  &__head {
+    text-align: center;
+    padding: 4rem;
+    font-size: 2rem;
+
+    &--shadow {
+      box-shadow: 0.1rem 0.11rem 0.12em rgba(0, 0, 0, 0.1);
+      z-index: 0;
+    }
+  }
+  &__people {
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  &--active {
+    transform: translateX(-100%);
+  }
+}
+
+.user {
+  box-shadow: 0rem 0rem 0.2rem rgba($color: #000000, $alpha: 0.2);
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 3rem;
+  &__photo {
+    display: inline-block;
+    width: 5rem;
+    margin-right: 3rem;
+    border-radius: 50%;
+  }
+
+  &__name {
+    width: 24rem;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to right bottom,
+      var(--color-message),
+      var(--color-message-self)
+    );
+  }
+}

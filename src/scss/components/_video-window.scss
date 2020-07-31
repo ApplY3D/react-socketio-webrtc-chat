@@ -1,0 +1,48 @@
+.video-window {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .video__partner-wrapper {
+    position: relative;
+    width: auto;
+    height: auto;
+    &--active {
+      min-width: 40rem;
+      min-height: 30rem;
+      background-image: linear-gradient(
+        to right bottom,
+        var(--color-primary-green),
+        var(--color-primary-blue)
+      );
+      align-items: center;
+      justify-content: flex-end;
+      border-radius: 10px;
+    }
+    display: flex;
+    flex-direction: column;
+  }
+
+  .video {
+    border-radius: 10px;
+
+    &__partner {
+      width: 50rem;
+      max-width: 100vw;
+      border: 0.7rem solid var(--color-primary-blue);
+    }
+
+    &__partner--hidden {
+      display: none;
+    }
+
+    &__status {
+      color: var(--color-white);
+    }
+
+    &__self {
+      width: 30rem;
+      border: 0.7rem solid var(--color-primary-green);
+    }
+  }
+}

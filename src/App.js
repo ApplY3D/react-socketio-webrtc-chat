@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Login from "./components/Login";
+import Header from "./components/Header";
+import Application from "./components/Application";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { connect } from "react-redux";
+
+function App({ joined }) {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isUsersOpen, setIsUsersOpen] = React.useState(false);
+
+  if (!joined) {
+    return (
+      <div className="container">
+        <Login />
+      </div>
+    );
+  } else {
+    return (
+      <div className="container">
+        <Header
+          setIsMenuOpen={setIsMenuOpen}
+          setIsUsersOpen={setIsUsersOpen}
+          isMenuOpen={isMenuOpen}
+          isUsersOpen={isUsersOpen}
+        />
+        <Application isMenuOpen={isMenuOpen} isUsersOpen={isUsersOpen} />
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = ({ joined }) => {
+  return { joined };
+};
+
+export default connect(mapStateToProps)(App);

@@ -1,0 +1,33 @@
+.btn {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-green),
+    var(--color-primary-blue)
+  );
+  border: none;
+  padding: 1rem;
+  border-radius: 15px;
+  font-weight: 700;
+  color: var(--color-white);
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-1px);
+  }
+  &:active {
+    cursor: pointer;
+    transform: translateY(1px);
+  }
+
+  &--danger {
+    background-image: linear-gradient(
+      to right bottom,
+      var(--color-primary-purple),
+      var(--color-primary-red)
+    );
+  }
+
+  &--chat {
+    width: 15%;
+  }
+}

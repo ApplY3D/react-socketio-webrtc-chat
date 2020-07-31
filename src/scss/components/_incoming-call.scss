@@ -1,0 +1,11 @@
+.incoming-call {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+.modal {
+  position: absolute;
+  width: 100%;
+  height: calc(80vh);
+  background-color: var(--color-white);
+  z-index: 100;
+  border-radius: 0.8rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  .users__head {
+    flex: 1;
+  }
+  &--mini {
+    width: 35rem;
+    height: 35rem;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    box-shadow: 0 -0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
+  &--fullscreen {
+    width: 90vw;
+    height: 90vh;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    box-shadow: 0 -0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
+}
